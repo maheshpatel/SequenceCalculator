@@ -4,17 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { SequenceCalculatorComponent } from './sequence-calculator/sequence-calculator.component';
+import { SequenceCalculatorService } from './sequence-calculator/sequence-calculator.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SequenceCalculatorComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [SequenceCalculatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

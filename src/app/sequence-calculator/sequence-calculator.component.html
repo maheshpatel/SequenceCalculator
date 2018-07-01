@@ -1,0 +1,56 @@
+<div>
+  <form>
+    <div class="row">
+      <div class="form-group">
+        <label for="sequence-number"> Please enter a positive number (number > 0)</label>
+        <input type="text" minlength="1" maxlength="6" id="input-number" required id="inputNumber" #sequenceNumber />
+        <button type="submit" class="btn btn-success" (click)="btnSubmitClick(sequenceNumber.value)">Submit</button>
+      </div>
+    </div>
+    <div *ngIf="errorMessage">
+      {{errorMessage}}
+    </div>
+    <div class="table-alignment" *ngIf="sequenceNumbers">
+      <table>
+        <tr>
+          <th>All Numbers</th>
+        </tr>
+        <tr *ngFor="let number of sequenceNumbers.allNumbersUptoGivenNumber">
+          <td>
+            {{number}}
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <th>Even Numbers</th>
+        </tr>
+        <tr *ngFor="let number of sequenceNumbers.evenNumbersUptoGivenNumber">
+          <td>
+            {{number}}
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <th>Odd Numbers</th>
+        </tr>
+        <tr *ngFor="let number of sequenceNumbers.oddNumbersUptoGivenNumber">
+          <td>
+            {{number}}
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <th>FizzBuzz Numbers</th>
+        </tr>
+        <tr *ngFor="let number of sequenceNumbers.fizzBuzzSequenceNumbersUptoGivenNumber">
+          <td>
+            {{number}}
+          </td>
+        </tr>
+      </table>
+    </div>
+  </form>
+</div>
